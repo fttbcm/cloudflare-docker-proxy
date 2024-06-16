@@ -7,3 +7,15 @@ const routes = {
   "ghcr.myroute.click": "https://ghcr.io",
   "cloudsmith.myroute.click": "https://docker.cloudsmith.io",
 };
+
+import DOCS from './help.html'
+ 
+// return docs
+if (url.pathname === "/") {
+  return new Response(DOCS, {
+    status: 200,
+    headers: {
+      "content-type": "text/html"
+    }
+  });
+}
